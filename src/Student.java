@@ -1,9 +1,25 @@
+import java.sql.Connection;
+import java.sql.DriverManager;
 import java.util.Scanner;
 
 public class Student {
     public static void main(String[] args) {
         int choice;
         Scanner input = new Scanner(System.in);
+        String name,college;
+        int rollno,admnum;
+
+
+
+
+        try {
+        Class.forName("com.mysql.jdbc.Driver");
+        Connection con = DriverManager.getConnection("jdbc:mysql://localhost:3306/studentdb","root","");
+        }
+        catch (Exception e ){
+            System.out.println(e);
+        }
+
         while(true) {
             System.out.println("Select an option from below");
             System.out.println("1.Add Student ");
